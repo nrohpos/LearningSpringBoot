@@ -7,7 +7,12 @@ import jakarta.persistence.*;
 @Table
 public class Dish extends BaseModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(
+            name = "dish_sequence",
+            sequenceName = "dish_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "dish_sequence")
     @Column(name = "id", nullable = false)
     private Long id;
     private String name;

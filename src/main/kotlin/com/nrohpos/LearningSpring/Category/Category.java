@@ -7,7 +7,12 @@ import jakarta.persistence.*;
 @Table
 public class Category extends BaseModel {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    @SequenceGenerator(
+            name = "category_sequence",
+            sequenceName = "category_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "category_sequence")
     @Column(name = "id", nullable = false)
     private Long id;
     private String name;
