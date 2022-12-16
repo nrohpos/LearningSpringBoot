@@ -1,11 +1,11 @@
-package com.nrohpos.LearningSpring.Category;
+package com.nrohpos.LearningSpring.Dish;
 
 import com.nrohpos.LearningSpring.Base.BaseModel;
 import jakarta.persistence.*;
 
 @Entity
 @Table
-public class Category extends BaseModel {
+public class Dish extends BaseModel {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "id", nullable = false)
